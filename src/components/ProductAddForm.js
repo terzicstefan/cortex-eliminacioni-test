@@ -34,7 +34,7 @@ const ProductAddForm = () => {
       .then((data) => {
         console.log('Product added:', data);
         addProduct(data); 
-        navigate('/'); // Navigate back to the product list after adding the product
+        navigate('/'); 
       })
       .catch((err) => {
         console.log('Error adding product:', err);

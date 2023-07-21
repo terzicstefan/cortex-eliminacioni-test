@@ -24,14 +24,12 @@ const ProductProvider = ({ children }) => {
   };
 
   const deleteProduct = (productId) => {
-    // Send DELETE request to the API to delete the product
     fetch(`https://dummyjson.com/products/${productId}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log("Product deleted:", data);
-        // After successful deletion, update the products state to remove the deleted product
         setProducts((prevProducts) =>
           prevProducts.filter((product) => product.id !== productId)
         );
@@ -42,7 +40,6 @@ const ProductProvider = ({ children }) => {
   };
 
   const editProduct = (productId, updatedProduct) => {
-    // Send PUT request to the API to update the product
     fetch(`https://dummyjson.com/products/${productId}`, {
       method: "PUT",
       headers: {
@@ -53,7 +50,6 @@ const ProductProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         console.log("Product updated:", data);
-        // After successful update, update the products state with the updated product
         setProducts((prevProducts) =>
           prevProducts.map((product) =>
             product.id === productId ? { ...product, ...updatedProduct } : product
@@ -66,7 +62,6 @@ const ProductProvider = ({ children }) => {
   };
 
   const addProduct = (newProduct) => {
-    // Add the new product to the products list
     setProducts((prevProducts) => [...prevProducts, newProduct]);
   };
 
