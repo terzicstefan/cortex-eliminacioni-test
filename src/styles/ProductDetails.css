@@ -1,0 +1,11 @@
+.product-details {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .product-details img {
+    width: 100%;
+    height: auto;
+  }
